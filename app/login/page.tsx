@@ -1,6 +1,6 @@
 "use client";
 import UserNavbar from "@/components/usernavbar";
-import { signIn } from "next-auth/react";
+import { signIn ,getSession} from "next-auth/react";
 
 export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -15,13 +15,18 @@ export default function LoginPage() {
         redirect: false,
         email,
         password,
-        callbackUrl: "/user/dashboard",
+        
       });
 
-      if (a?.ok) {
-        window.location.href = "/user/dashboard";
-      } else {
+      if (!a?.ok) {
         alert("Invalid credentials");
+        return;
+      }
+      const session=await getSession();
+      if(session?.user?.role==="admin"){
+        window.location.href="/admin/dashboard";
+      } else{
+        window.location.href="/user/dashboard";
       }
     } catch (err) {
       console.error("Login error:", err);
@@ -37,13 +42,13 @@ export default function LoginPage() {
           <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
             <input
               name="email"
-              className="p-4 h-10 border rounded shadow placeholder-gray-400"
+              className="p-4 h-10 border rounded shadow text-black placeholder-gray-400"
               type="email"
               placeholder="Email"
             />
             <input
               name="password"
-              className="p-4 h-10 border rounded shadow placeholder-gray-400"
+              className="p-4 h-10 border rounded shadow text-black placeholder-gray-400"
               type="password"
               placeholder="Password"
             />
