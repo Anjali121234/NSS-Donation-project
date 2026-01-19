@@ -1,11 +1,13 @@
 "use client";
-import UserNavbar from "@/components/usernavbar";
+import Link from "next/link";
 import { signIn ,getSession} from "next-auth/react";
+import { useState } from "react";
 
 export default function LoginPage() {
+  const [logging,setlogging]=useState(false)
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    setlogging(true);
     const form = e.currentTarget;
     const email = (form.email as HTMLInputElement).value;
     const password = (form.password as HTMLInputElement).value;
@@ -31,12 +33,12 @@ export default function LoginPage() {
     } catch (err) {
       console.error("Login error:", err);
       alert("Something went wrong");
-    }
+    }finally{setlogging(false);}
   };
 
   return (
     <div>
-      <UserNavbar />
+     
       <div className="min-h-screen bg-gray-200 flex items-center justify-center">
         <div className="bg-white w-80 p-6 rounded-lg">
           <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
@@ -54,10 +56,15 @@ export default function LoginPage() {
             />
             <button
               type="submit"
-              className="bg-gray-500 text-white h-10 rounded shadow"
+              
+              className={` text-white h-10 rounded shadow ${logging? "bg-gray-400" :"bg-gray-500"}`}
             >
-              Login
+             {logging ? "Logging in":"Login"}
             </button>
+            <Link href="/register">
+            <button className="text-white h-10 rounded shadow bg-gray-500 w-full">
+              Register as a new user
+            </button></Link>
           </form>
         </div>
       </div>

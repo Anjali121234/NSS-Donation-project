@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-
+import User from "@/models/User";
+import bcrypt from "bcrypt";
 const MONGO_URI=process.env.MONGO_URI;
 
 if(!MONGO_URI){
@@ -17,6 +18,8 @@ async function connectDB() {
         cached.promise=mongoose.connect(MONGO_URI!).then((mongoose)=>mongoose);
     }
     cached.conn=await cached.promise;
-    return cached.conn;
+    
+
+  return cached.conn;
 }
 export default connectDB;

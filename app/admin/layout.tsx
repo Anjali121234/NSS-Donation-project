@@ -1,15 +1,15 @@
 import Link from "next/link";
-import { requireUser } from "@/lib/userauth";
+import { requireAdmin } from "@/lib/auth";
 import Navbar from "@/components/navbar";
-export default  async function Userlayout({
+export default async function Adminlayout({
   children,
 }:{
   children:React.ReactNode;
 }){
-    const session= await requireUser();  
+     const session= await requireAdmin();  
   return(
     <div>
-       <Navbar role="user" />
+       <Navbar role="admin" />
          
 
         <main>{children}</main>
