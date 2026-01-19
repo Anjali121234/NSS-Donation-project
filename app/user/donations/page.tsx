@@ -4,52 +4,16 @@ import { useState } from "react";
 export default function DonatePage() {
   const [amount, setAmount] = useState("");
  
-  const handleDonate = async () => {
-   try{
+  const handleDonate = async (e: React.FormEvent) => {
+   e.preventDefault();
     const res = await fetch("/api/donation", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: Number(amount) }),
     });
-
     const data = await res.json();
-    const donationId = data.donationId;
-
-console.log("payhere:", window.payhere);
-      if (!window.payhere) {
-  alert("PayHere not loaded");
-  return;
-}
-
+     alert(`Donation ${data.donation.status}`);
     
-      
-      window.payhere.startPayment({
-        sandbox: true,
-        merchant_id: "1233660",
-        order_id: donationId, 
-        items: "Donation",
-        amount: Number(amount),
-        currency: "LKR",
-
-        notify_url: "http://localhost:3000/api/payment/notify",
-        return_url: "http://localhost:3000/user/dashboard",
-        cancel_url: "http://localhost:3000/user/dashboard",
-
-        first_name: "Test",
-        last_name: "User",
-        email: "test@test.com",
-        phone: "0771234567",
-        address: "Colombo",
-        city: "Colombo",
-        country: "Sri Lanka",
-       
-      });
-
-    }catch(err){
-      console.error(err);
-      alert("Payment Error")
-    } 
-
 }
 
   return (

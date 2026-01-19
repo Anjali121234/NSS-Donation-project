@@ -4,7 +4,6 @@ import Donation from "@/models/donation";
 
 export async function GET() {
   await connectDB();
-
   const donations = await Donation.find()
     .populate("userId", "name email")
     .sort({ createdAt: -1 });

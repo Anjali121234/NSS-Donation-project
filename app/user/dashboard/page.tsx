@@ -49,7 +49,7 @@ export default  function UserDashboard() {
 
                 <p className="text-gray-400 px-5 py-5"> Start your first donation and make a difference 💚</p>
                  <Link href="/user/donations"
-      className="mt-4 inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+      className="mt-4 inline-block bg-green-600 text-white m-4 px-4 p-2 rounded hover:bg-green-700 transition"
     >
       Donate Now
     </Link></div>

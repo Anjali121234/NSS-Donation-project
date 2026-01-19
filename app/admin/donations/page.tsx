@@ -78,8 +78,8 @@ export default function AdminDonationsPage() {
 
             {filteredDonations.map((d) => (
               <tr key={d._id} className="border-b border-gray-200 hover:bg-gray-50 text-gray-600">
-                <td className="p-3">{d.userId.name || "Unknown"}</td>
-                <td className="p-3">{d.userId.email || "-"}</td>
+                <td className="p-3">{d.userId?.name ?? "Unknown"}</td>
+                <td className="p-3">{d.userId?.email ?? "-"}</td>
                 <td className="p-3">₹{d.amount}</td>
                 <td className="p-3">
                   <span

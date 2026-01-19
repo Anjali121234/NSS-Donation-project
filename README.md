@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧾 NSS Donation Management System
 
-## Getting Started
+A full-stack **Donation Management Web Application** built as part of an **NSS Development Project**, designed to manage users, donations, and admin insights with authentication and role-based access.
 
-First, run the development server:
+---
 
+## 🚀 Features
+
+### 👤 User Features
+- User registration & login
+- Secure authentication using NextAuth
+- Make donations by entering amount
+- View latest donation status
+- View complete donation history
+- Responsive user dashboard
+
+### 🛠 Admin Features
+- Admin authentication
+- Admin dashboard with statistics
+- View all users
+- View all donations
+- Role-based access control
+
+---
+
+## 💳 Payment Handling
+
+⚠️ **No real payment gateway is used in this project.**
+
+- Donations are handled using **mock / simulated logic**
+- Donation status (`pending`, `success`, `failed`) is managed programmatically
+- Suitable for academic and demo purposes
+
+> The code structure allows easy future integration of real payment gateways.
+
+---
+
+## 🧱 Tech Stack
+
+**Frontend**
+- Next.js (App Router)
+- React
+- Tailwind CSS
+
+**Backend**
+- Next.js API Routes
+- NextAuth (Credentials Provider)
+- JWT Sessions
+
+**Database**
+- MongoDB
+- Mongoose
+
+---
+
+## 📁 Project Structure
+.
+├── app/
+│   ├── api/
+│   │   ├── auth/                # NextAuth configuration
+│   │   ├── donation/            # Create donation (POST)
+│   │   ├── user/
+│   │   │   └── donations/       # User donation history
+│   │   └── admin/
+│   │       ├── stats/           # Dashboard stats
+│   │       ├── users/           # All users
+│   │       └── donations/       # All donations
+│   │
+│   ├── admin/                   # Admin pages
+│   ├── user/                    # User pages
+│   ├── login/
+│   ├── register/
+│   └── layout.tsx
+│
+├── components/
+│   ├── Navbar.tsx
+│   ├── StatCard.tsx
+│   └── Charts.tsx
+│
+├── lib/
+│   ├── db.ts                    # MongoDB connection
+│   ├── auth.ts                  # Role protection helpers
+│   └── seedAdmin.ts             # Admin seeding logic
+│
+├── models/
+│   ├── User.ts
+│   └── Donation.ts
+│
+├── scripts/
+│   └── seedAdmin.ts             # CLI admin creation script
+│
+├── .env.local
+├── README.md
+└── package.json
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone 
+cd donation-system
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies
+npm install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create .env:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+MONGODB_URI=your_mongodb_connection_string
+NEXTAUTH_SECRET=your_secret_key
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=Admin@123
 
-## Learn More
+###To create the admin user in a fresh database:
+run:
+npx tsx scripts/seedAdmin.ts
 
-To learn more about Next.js, take a look at the following resources:
+###Default Admin Credentials
+ -**Email**: admin@example.com
+ -**Password**: Admin@123
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ ###Run the Project:
+   npm run dev
 
-## Deploy on Vercel
+###Open in browser:
+http://localhost:3000
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+###Authentication
+- NextAuth Credentials Provider
+- JWT-based sessions
+- Role-based route protection
+- Separate admin & user dashboards
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+###🎯 Learning Outcomes
+
+- Full-stack development with Next.js
+- Authentication & authorization
+- MongoDB schema design
+- REST APIs
+- Tailwind CSS responsiveness
+- Clean project architecture
+
+
+
+##👩‍💻 Author
+
+Anjali
+Undergraduate Student, IIT Roorkee
+NSS Development Project

@@ -12,7 +12,6 @@ export async function POST(req:Request){
      if(!session){
       return  NextResponse.json({message:"unauthorized"},{status:401});
      }
-
      const {amount}=await req.json();
      if (!amount || typeof amount !== "number" || amount <= 0) {
   return NextResponse.json({ message: "Invalid donation amount" }, { status: 400 });
@@ -22,13 +21,20 @@ const donation= await Donation.create({
     amount,
     status:"pending",
 })
+ const statuses = ["success", "pending"];
+    const finalStatus =
+      statuses[Math.floor(Math.random() * statuses.length)];
 
-    
- return NextResponse.json({
-      message: "Donation created",
-      donationId: donation._id,
-      amount: donation.amount,
+    donation.status = finalStatus;
+    donation.transactionId = "TXN_" + Date.now();
+    await donation.save();
+
+    return NextResponse.json({
+      message: "Donation processed",
+      donation,
     });
+    
+
   } catch (err) {
     console.error(err);
     return NextResponse.json({ message: "Server error" }, { status: 500 });
