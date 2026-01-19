@@ -1,12 +1,12 @@
-# 🧾 NSS Donation Management System
+#  NSS Donation Management System
 
 A full-stack **Donation Management Web Application** built as part of an **NSS Development Project**, designed to manage users, donations, and admin insights with authentication and role-based access.
 
 ---
 
-## 🚀 Features
+##  Features
 
-### 👤 User Features
+###  User Features
 - User registration & login
 - Secure authentication using NextAuth
 - Make donations by entering amount
@@ -14,7 +14,7 @@ A full-stack **Donation Management Web Application** built as part of an **NSS D
 - View complete donation history
 - Responsive user dashboard
 
-### 🛠 Admin Features
+### Admin Features
 - Admin authentication
 - Admin dashboard with statistics
 - View all users
@@ -23,9 +23,9 @@ A full-stack **Donation Management Web Application** built as part of an **NSS D
 
 ---
 
-## 💳 Payment Handling
+##  Payment Handling
 
-⚠️ **No real payment gateway is used in this project.**
+ **No real payment gateway is used in this project.**
 
 - Donations are handled using **mock / simulated logic**
 - Donation status (`pending`, `success`, `failed`) is managed programmatically
@@ -35,7 +35,7 @@ A full-stack **Donation Management Web Application** built as part of an **NSS D
 
 ---
 
-## 🧱 Tech Stack
+##  Tech Stack
 
 **Frontend**
 - Next.js (App Router)
@@ -53,47 +53,7 @@ A full-stack **Donation Management Web Application** built as part of an **NSS D
 
 ---
 
-## 📁 Project Structure
-.
-├── app/
-│   ├── api/
-│   │   ├── auth/                # NextAuth configuration
-│   │   ├── donation/            # Create donation (POST)
-│   │   ├── user/
-│   │   │   └── donations/       # User donation history
-│   │   └── admin/
-│   │       ├── stats/           # Dashboard stats
-│   │       ├── users/           # All users
-│   │       └── donations/       # All donations
-│   │
-│   ├── admin/                   # Admin pages
-│   ├── user/                    # User pages
-│   ├── login/
-│   ├── register/
-│   └── layout.tsx
-│
-├── components/
-│   ├── Navbar.tsx
-│   ├── StatCard.tsx
-│   └── Charts.tsx
-│
-├── lib/
-│   ├── db.ts                    # MongoDB connection
-│   ├── auth.ts                  # Role protection helpers
-│   └── seedAdmin.ts             # Admin seeding logic
-│
-├── models/
-│   ├── User.ts
-│   └── Donation.ts
-│
-├── scripts/
-│   └── seedAdmin.ts             # CLI admin creation script
-│
-├── .env.local
-├── README.md
-└── package.json
-
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 ### 1️⃣ Clone the repository
 ```bash
@@ -114,24 +74,24 @@ ADMIN_PASSWORD=Admin@123
 run:
 npx tsx scripts/seedAdmin.ts
 
-###Default Admin Credentials
- -**Email**: admin@example.com
- -**Password**: Admin@123
+Default Admin Credentials
+ - Email: admin@example.com
+ - Password: Admin@123
 
 
- ###Run the Project:
+ Run the Project:
    npm run dev
 
-###Open in browser:
+Open in browser:
 http://localhost:3000
 
-###Authentication
+Authentication
 - NextAuth Credentials Provider
 - JWT-based sessions
 - Role-based route protection
 - Separate admin & user dashboards
 
-###🎯 Learning Outcomes
+🎯 Learning Outcomes
 
 - Full-stack development with Next.js
 - Authentication & authorization
@@ -141,8 +101,7 @@ http://localhost:3000
 - Clean project architecture
 
 
-
-##👩‍💻 Author
+👩‍💻 Author
 
 Anjali
 Undergraduate Student, IIT Roorkee
