@@ -56,28 +56,22 @@ A full-stack **Donation Management Web Application** built as part of an **NSS D
 ##  Setup Instructions
 
 ### 1️⃣ Clone the repository
-git clone https://github.com/Anjali121234/NSS-Donation-project.git
-cd donation-system
+- git clone https://github.com/Anjali121234/NSS-Donation-project.git
+- cd donation-system
 
-Install dependencies
-'npm intall'
-```bash git
-## git clone https://github.com/Anjali121234/NSS-Donation-project.git
-cd donation-system
+##Install dependencies -
+`npm intall`
 
-Install dependencies
-npm install
-
-Create .env:
+### Create .env:
 
 MONGODB_URI=your_mongodb_connection_string
 NEXTAUTH_SECRET=your_secret_key
 ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=Admin@123
 
-###To create the admin user in a fresh database:
-run:
-npx tsx scripts/seedAdmin.ts
+### To create the admin user in a fresh database:
+> Run:
+`npx tsx scripts/seedAdmin.ts`
 
 Default Admin Credentials
  - Email: admin@example.com
