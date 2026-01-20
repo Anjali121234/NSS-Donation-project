@@ -59,7 +59,7 @@ A full-stack **Donation Management Web Application** built as part of an **NSS D
 - git clone https://github.com/Anjali121234/NSS-Donation-project.git
 - cd donation-system
 
-##Install dependencies -
+### Install dependencies -
 `npm intall`
 
 ### Create .env:
@@ -73,24 +73,24 @@ ADMIN_PASSWORD=Admin@123
 > Run:
 `npx tsx scripts/seedAdmin.ts`
 
-Default Admin Credentials
+### Default Admin Credentials
  - Email: admin@example.com
  - Password: Admin@123
 
 
- Run the Project:
-   npm run dev
+ ### Run the Project:
+  `npm run dev`
 
-Open in browser:
+### Open in browser:
 http://localhost:3000
 
-Authentication
+### Authentication
 - NextAuth Credentials Provider
 - JWT-based sessions
 - Role-based route protection
 - Separate admin & user dashboards
 
-🎯 Learning Outcomes
+### Learning Outcomes
 
 - Full-stack development with Next.js
 - Authentication & authorization
@@ -100,7 +100,7 @@ Authentication
 - Clean project architecture
 
 
-👩‍💻 Author
+### Author
 
 Anjali
 Undergraduate Student, IIT Roorkee
