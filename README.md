@@ -70,7 +70,7 @@ ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=Admin@123
 
 ### To create the admin user in a fresh database:
-> Run:
+ Run:
 `npx tsx scripts/seedAdmin.ts`
 
 ### Default Admin Credentials
@@ -83,6 +83,8 @@ ADMIN_PASSWORD=Admin@123
 
 ### Open in browser:
 http://localhost:3000
+
+---
 
 ### Authentication
 - NextAuth Credentials Provider
@@ -98,10 +100,11 @@ http://localhost:3000
 - REST APIs
 - Tailwind CSS responsiveness
 - Clean project architecture
-
+  
+---
 
 ### Author
 
-> Anjali
-> Undergraduate Student, IIT Roorkee
-> NSS Development Project
+- Anjali
+-  Undergraduate Student, IIT Roorkee
+- NSS Development Project
