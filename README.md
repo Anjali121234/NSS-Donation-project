@@ -56,10 +56,11 @@ A full-stack **Donation Management Web Application** built as part of an **NSS D
 ##  Setup Instructions
 
 ### 1️⃣ Clone the repository
-- anjlai
-- jfhef
-- frsh
-- jfs
+git clone https://github.com/Anjali121234/NSS-Donation-project.git
+cd donation-system
+
+Install dependencies
+'npm intall'
 ```bash git
 ## git clone https://github.com/Anjali121234/NSS-Donation-project.git
 cd donation-system
