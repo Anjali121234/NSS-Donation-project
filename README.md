@@ -102,6 +102,6 @@ http://localhost:3000
 
 ### Author
 
-Anjali
-Undergraduate Student, IIT Roorkee
-NSS Development Project
+> Anjali
+> Undergraduate Student, IIT Roorkee
+> NSS Development Project
